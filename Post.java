@@ -1,48 +1,40 @@
 import java.util.ArrayList;
-
 public class Post
 {
-    private String username;
-    private long timestamp;
-    private int likes;
-    private ArrayList<String> comments;
+	private String username;
+  private long timestamp;
+  private int likes;
 
-    public Post(String user){
-        username = user;
-        timestamp = System.currentTimeMillis();
-        comments = new ArrayList<>();
-        likes = 0;
-    }
-
+  public Post(String user){
+  	username = user;
+    timestamp = System.currentTimeMillis();
+    likes = 0;
+  }
+  
     /**
      * Metodo para dar un like.
      */
     public void like(){
         likes++;
     }
-
+    
     /**
      * Metodo para quitar un like en caso de que los haya.
      */
     public void unlike(){
         if(likes != 0)
-            likes--; 
+           likes--; 
     }
-
-    /**
-     * Metodo para añadir un comentario al post
-     */
-    public void addComment(String text){
-        comments.add(text);
-    }
-
+  
+  
+    
     /**
      * Metodo que devuelve la estampa de tiempo en el momento de crear el post
      */
     public long getTimeStamp(){
         return timestamp;
     }
-
+    
     /**
      * Metodo que muestra toda la info del post
      */
@@ -52,14 +44,10 @@ public class Post
         info += username + "\n=====================\n" + "Posted: ";
         info += timeString(time);
         info += "_____________________\nLikes: " + likes + "\n=====================\n\n";
-        if(comments.size() != 0)
-            for(int i=0; i<comments.size(); i++)
-                info += comments.get(i) + "\n_____________________\n";
-        else
-            info += "Sin comentarios";
+
         System.out.println(info);
     }
-
+    
     /**
      * Metodo para pasar el tiempo a minutos y segundos.
      */
@@ -71,11 +59,15 @@ public class Post
             info += min + " Minutes, ";
         info += sec + " Seconds\n";
         return info;
-    }  
-
+    }
+    
+    /**
+     * returns the username for this post
+     */
     public String getUsername()
     {
         return username;
     }
 }
+
 
