@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class PhotoPost extends Post
+public class PhotoPost extends PostWithComments
 {
     private String filename;
     private String caption;
@@ -36,13 +36,6 @@ public class PhotoPost extends Post
         return caption;
     }
 }
-
-
-
-
-
-
-
 
 
 

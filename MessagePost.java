@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MessagePost extends Post
+public class MessagePost extends PostWithComments
 {
     private String message;
 
@@ -24,6 +24,14 @@ public class MessagePost extends Post
     public String getText(){
         return message;
     }
+  
+  
+  	public void printShortSummary()
+    {
+      System.out.println("Esto es un post de texto creado" + getUsername());
+    }    
 }
+
+
 
 
